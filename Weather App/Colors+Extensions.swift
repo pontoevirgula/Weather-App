@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIColor{
-    static let contrastColor = UIColor(named:"contrastColor")
+    static let contrastColor = UIColor(named:"constrastColor")
     static let primaryColor = UIColor(named:"primaryColor")
     static let softGray3 = UIColor(named:"softGray")
 }
