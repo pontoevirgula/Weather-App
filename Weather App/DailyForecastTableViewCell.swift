@@ -23,7 +23,6 @@ class DailyForecastTableViewCell: UITableViewCell, UIViewFunction {
     private lazy var dayLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "TER"
         label.textColor = UIColor.contrastColor
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textAlignment = .left
@@ -33,7 +32,6 @@ class DailyForecastTableViewCell: UITableViewCell, UIViewFunction {
     private lazy var maxLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "max 28°C"
         label.textColor = UIColor.contrastColor
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textAlignment = .right
@@ -43,7 +41,6 @@ class DailyForecastTableViewCell: UITableViewCell, UIViewFunction {
     private lazy var minLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "min 21°C"
         label.textColor = UIColor.contrastColor
         label.font = .systemFont(ofSize: 12, weight: .semibold)
         label.textAlignment = .right
@@ -67,6 +64,13 @@ class DailyForecastTableViewCell: UITableViewCell, UIViewFunction {
         stackView.isLayoutMarginsRelativeArrangement = true
         return stackView
     }()
+    
+    func loadData(weekDay : String?, min: String?, max : String?, icon: UIImage?) {
+        dayLabel.text = weekDay
+        minLabel.text = "min \(min ?? "0ºC")"
+        maxLabel.text = "max \(max ?? "0ºC")"
+        iconImageView.image = icon
+    }
     
     func setupViews() {
         backgroundColor = .clear
