@@ -79,7 +79,7 @@ class ViewController: UIViewController, UIViewFunction {
         return stackView
     }()
     
-    private lazy var humidityLabelWinter : UILabel = {
+    private lazy var windHumidityLabel : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Vento"
@@ -88,7 +88,7 @@ class ViewController: UIViewController, UIViewFunction {
         return label
     }()
     
-    private lazy var humidityValueLabelWinter : UILabel = {
+    private lazy var windHumidityValue : UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize:12, weight: .semibold)
@@ -97,7 +97,7 @@ class ViewController: UIViewController, UIViewFunction {
     }()
     
     private lazy var windStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [humidityLabelWinter, humidityValueLabelWinter])
+        let stackView = UIStackView(arrangedSubviews: [windHumidityLabel, windHumidityValue])
         stackView.axis = .horizontal
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -194,7 +194,7 @@ class ViewController: UIViewController, UIViewFunction {
             humidityValueLabel.text = "\(umidade)%"
            
         let velocidadeVento = Int(firstForecast.wind.speed)
-        humidityValueLabelWinter.text = "\(velocidadeVento)km/h"
+        windHumidityValue.text = "\(velocidadeVento)km/h"
     }
     
     func setupViews() {
